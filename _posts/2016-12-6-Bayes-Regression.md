@@ -7,4 +7,14 @@ This project required us to build a model that would define distribution paramet
 
 ![Tide Data]({{file:///Users/johnnosal/jmnosal.github.io/images/TideData.jpg}})
 
-The 
+The plot suggests a sine curve to the data, so a mu function was chosen on the order of A(sin(B(x-c))) + D, which after a lot of hand-wringing, was linerized to the form A + Bsin(x) + Ccos(x). This was plugged into our likelihood log function multiplied by our prior, which was then fed into the emcee sampler with 40 walkers each going 100,000 steps (4 million total samples). We were then given values for our three parameters and lambda: A=  B=  C=  Lambda =  , and a regression line fitting our data:
+
+(regression line plot here)
+
+The fit looks good especially given our small inital data set and number of visual outliers. 
+
+The next step for this model will be to remove some of its rigidity; right now it is hard-coded to onyl accept log funtions with three parameters and a lambda, and said log function is created outside the Class created. Assuming a normal distribution, the user should only need to submit the mu fuction, prior, and number of desired walkers, and let the model take care of the rest. Until next time...
+
+Acknowledgements:
+
+A good deal of the original code for this project was adapted from class lectures and jupyter notebooks created by Kilian Scheltat. I also worked closely with Alex Motamed, John Snyder, Ellen Kim, Guillermo Kopp, and James Larkin.
