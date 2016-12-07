@@ -9,7 +9,7 @@ This project required us to build a model that would define distribution paramet
 
 The plot suggests a sine curve to the data, so a mu function was chosen on the order of A(sin(B(x-c))) + D, which after a lot of hand-wringing, was linerized to the form A + Bsin(x) + Ccos(x). This was plugged into our likelihood log function multiplied by our prior, which was then fed into the emcee sampler with 40 walkers each going 100,000 steps (4 million total samples). We were then given values for our three parameters and lambda (rounded here): A = 9.477, B = -0.605, C = 1.804, Lambda = 0.097, and a regression line fitting our data:
 
-(regression line plot here)
+![Tide Data](/images/Posts/TideDataReg.jpg)
 
 The fit looks good especially given our small inital data set and number of visual outliers. 
 
